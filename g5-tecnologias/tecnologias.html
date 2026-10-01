@@ -123,11 +123,6 @@
             </article>
         </section>
 
-        <section id="tecnologias">
-
-            <h2>Tecnologias estudadas</h2>
-
-
         </section>
 
 
@@ -176,10 +171,41 @@
                 </tbody>
             </table>
         </section>
-
+<!-- ===================== BOAS PRÁTICAS =====================
+             ol = lista NUMERADA. O enunciado pede ol com pelo menos cinco itens. -->
+        <section class="secao" id="boas-praticas">
+            <h2>Boas práticas</h2>
+            <ol>
+                <li>Usar tags semânticas (header, nav, main, section, article, footer) em vez de div genérica.</li>
+                <li>Escrever texto alternativo (alt) descritivo em toda imagem.</li>
+                <li>Nomear classes pela função, não pela aparência: card-tech, e não caixa-branca.</li>
+                <li>Manter o CSS em arquivo externo, separado do HTML.</li>
+                <li>Usar variáveis CSS para as cores, para mudar a paleta em um só lugar.</li>
+                <li>Nunca remover o contorno de foco (outline) sem colocar um indicador visível no lugar.</li>
+                <li>Validar o HTML no validador do W3C antes de publicar.</li>
+            </ol>
+        </section>
 
 
     </main>
+
+ 
+    <!-- ===================== ASIDE =====================
+         aside: conteúdo complementar, que não é o assunto principal.
+         Por isso fica FORA do main. -->
+    <aside id="links-externos">
+        <h2>Para se aprofundar</h2>
+        <!-- ul: vários links do mesmo tipo, sem ordem. -->
+        <ul>
+            <!-- target="_blank": abre o link em outra aba.
+                 O texto do link diz para onde ele leva ("clique aqui" é ruim). -->
+            <li><a href="https://developer.mozilla.org/pt-BR/" target="_blank">MDN Web Docs: referência de HTML, CSS e JavaScript em português</a></li>
+            <li><a href="https://validator.w3.org/" target="_blank">Validador de HTML do W3C</a></li>
+            <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks: artigos e guias sobre técnicas de CSS</a></li>
+        </ul>
+    </aside>
+ 
+ 
 
     <!-- ===================== RODAPÉ =====================
          Modelo padronizado pela turma. A linha do Grupo 5 foi acrescentada
