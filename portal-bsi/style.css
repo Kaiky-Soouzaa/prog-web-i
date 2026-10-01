@@ -1,10 +1,7 @@
-<<<<<<< HEAD
-=======
-/* COMMIT 08 — 17:55 — José Antonio
-   Arquivo: CSS | Responsável: José Antonio
-   Etapa: Estilização da tabela
+/* COMMIT 09 — 18:25 — Yuri
+   Arquivo: CSS | Responsável: Yuri
+   Etapa: Estilização do aside e ajustes de layout
 */
->>>>>>> 63f8564 (Istilização de tabela)
 /* =====================================================================
    style.css COMENTADO PARA ESTUDO — Grupo 5, página tecnologias.html
    Ordem do arquivo (exigida pelo enunciado):
@@ -199,8 +196,6 @@ main h1 {
     margin-bottom: 0.5rem;
 }
 
-<<<<<<< HEAD
-=======
 
 /* ===== 11. TABELA COMPARATIVA ===== */
 
@@ -253,4 +248,48 @@ main h1 {
     background: rgba(91, 155, 213, 0.12);
 }
 
->>>>>>> 63f8564 (Istilização de tabela)
+
+/* ===== 12. BOAS PRÁTICAS ===== */
+
+.secao ol {
+    padding-left: 1.5rem;
+    /* o reset zerou o recuo da ol; sem isso os números ficam fora da área visível */
+}
+
+.secao ol li {
+    margin-bottom: 0.5rem; /* espaço entre os itens */
+}
+
+
+/* ===== 13. ASIDE DE LINKS EXTERNOS =====
+   Obrigatório: padding 1.25rem e o fundo azul-claro pedido no enunciado (pela variável --azul-claro). */
+
+#links-externos {
+    background: var(--azul-claro);
+    padding: 1.25rem;
+    margin: 2rem;       /* o aside não está dentro de uma .secao: sem margem, encostaria na borda da tela */
+    border-radius: 6px;
+}
+
+#links-externos h2 {
+    color: var(--azul);
+    margin-bottom: 0.75rem;
+}
+
+#links-externos ul {
+    padding-left: 1.25rem;
+    /* mesmo motivo: devolver o recuo que o reset tirou */
+}
+
+#links-externos li {
+    margin-bottom: 0.5rem;
+}
+
+#links-externos a {
+    color: var(--azul2);
+}
+
+#links-externos a:hover {
+    color: var(--azul);
+}
+
