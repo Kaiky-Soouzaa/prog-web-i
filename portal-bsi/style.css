@@ -1,6 +1,6 @@
-/* COMMIT 09 — 18:25 — Yuri
-   Arquivo: CSS | Responsável: Yuri
-   Etapa: Estilização do aside e ajustes de layout
+/* COMMIT 10 — 19:00 — Mateus
+   Arquivo: CSS | Responsável: Mateus
+   Etapa: Revisão final e padronização dos estilos
 */
 /* =====================================================================
    style.css COMENTADO PARA ESTUDO — Grupo 5, página tecnologias.html
@@ -293,3 +293,41 @@ main h1 {
     color: var(--azul);
 }
 
+
+/* =====================================================================
+   14. ELEMENTO EXTRA: transition
+   O que é: anima a mudança de uma propriedade CSS ao longo do tempo.
+   Sem transition, a cor muda de uma vez no :hover; com ela, a mudança
+   acontece de forma gradual.
+
+   Como funciona: transition: <propriedade> <duração> <curva>;
+     - color / box-shadow: qual propriedade será animada
+     - 0.3s: quanto tempo a animação dura (300 milissegundos)
+     - ease: curva de velocidade (começa devagar, acelera e desacelera
+       no fim), o que deixa o movimento mais natural
+
+   A transition fica no estado normal, não no :hover. Assim ela funciona
+   nos dois sentidos: quando o mouse entra e quando sai.
+
+   Por que escolhemos: deixa a navegação mais agradável sem distrair,
+   e reforça visualmente qual elemento está sob o mouse.
+
+   Os seletores .link-nav e .card-tech já apareceram antes. As regras
+   se SOMAM (cascata). Deixamos aqui separado para o professor achar fácil.
+   ===================================================================== */
+
+.link-nav {
+    transition: color 0.3s ease;
+}
+
+.card-tech {
+    transition: box-shadow 0.3s ease;
+}
+
+
+/* Sombra com rgba() a partir do --azul (26, 58, 92), como o enunciado autoriza.
+   box-shadow: deslocamento para o lado (0), para baixo (4px), desfoque (12px), cor. */
+
+.card-tech:hover {
+    box-shadow: 0 4px 12px rgba(26, 58, 92, 0.15);
+}
