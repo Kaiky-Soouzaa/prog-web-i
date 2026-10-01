@@ -1,49 +1,77 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/* COMMIT 06 — 17:05 — Kaiky Eduardo
+   Arquivo: CSS | Responsável: Kaiky Eduardo
+   Etapa: Base visual e variáveis do projeto
+*/
+/* =====================================================================
+   style.css COMENTADO PARA ESTUDO — Grupo 5, página tecnologias.html
+   Ordem do arquivo (exigida pelo enunciado):
+   1º :root (cores)  →  2º reset  →  3º o resto
+   ===================================================================== */
 
-body {
-    font-family: "Inter", Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--tinta);
-    background-color: var(-- fundo);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
+
+/* ===== 1. PALETA DE CORES (variáveis) =====
+   :root é o elemento mais alto da página. As variáveis criadas aqui
+   valem para a página inteira.
+   Para usar uma cor: var(--azul).
+   Vantagem: se a cor mudar, muda num lugar só e a página toda acompanha.
+   REGRA DO ENUNCIADO: nenhuma cor em hexadecimal (#...) fora do :root. */
 
 :root {
-    --azul: #1A3A5C;
-    /* cor principal — cabeçalho, botões, títulos*/
-    --azul2: #2563A8;
-    /* variação média — hover, destaques */
-    --azul3: #5B9BD5;
-    /* variação clara — bordas, ícones */
-    --dourado: #C8922A;
-    /*cor de destaque — âmbar, CTA */
-    --fundo: #F5F7FA;
-    /* fundo da página */
-    --tinta: #1A1A2E;
-    /* cor do texto principal */
-    --cinza: #5A6270;
-    /* texto secundário, labels */
-    --linha: #D0D7E3;
-    /* bordas eseparadores */
+    --azul: #1A3A5C;      /* cor principal: cabeçalho, rodapé, títulos */
+    --azul2: #2563A8;     /* azul médio: borda de cima dos cards */
+    --azul3: #5B9BD5;     /* azul claro: linhas alternadas da tabela */
+    --dourado: #C8922A;   /* destaque: hover do menu, link ativo */
+    --fundo: #F5F7FA;     /* fundo da página */
+    --tinta: #1A1A2E;     /* cor do texto principal */
+    --cinza: #5A6270;     /* texto secundário (dd, caption) */
+    --linha: #D0D7E3;     /* bordas e separadores */
     --branco: #FFFFFF;
+    /* Cor exigida no enunciado para o aside do Grupo 5.
+       Ela não estava na paleta, então escrever o hex direto no aside
+       violaria a regra. Criamos a variável com autorização do professor no fórum. */
+    --azul-claro: #EAF0F8;
 }
 
-/* css cabecalho */
+
+/* ===== 2. RESET =====
+   Tem que ser a primeira regra depois do :root (exigência do enunciado).
+   O * seleciona TODOS os elementos da página. */
+
+* {
+    /* padding e borda passam a contar DENTRO da largura.
+       Sem isso, uma caixa com width 100% + padding fica maior que a tela. */
+    box-sizing: border-box;
+    /* Cada navegador tem espaçamentos padrão diferentes.
+       Zeramos tudo para todos começarem do mesmo ponto. */
+    margin: 0;
+    padding: 0;
+    /* Efeito colateral: listas (ol, ul) e dd perdem o recuo.
+       Mais abaixo devolvemos esse recuo onde precisa. */
+}
+
+
+/* ===== 3. BASE: font-family só aqui, os filhos herdam =====
+   HERANÇA: os elementos de dentro do body recebem essas propriedades
+   automaticamente. Repetir a fonte em cada seletor seria desnecessário,
+   e o enunciado cobra isso. */
+
+body {
+    font-family: 'Inter', Arial, sans-serif; /* se a Inter falhar, usa Arial */
+    font-size: 16px;
+    line-height: 1.6;                         /* espaço entre as linhas do texto */
+    color: var(--tinta);
+    background-color: var(--fundo);
+}
+
+
+/* ===== 4. CABEÇALHO (modelo padronizado pela turma) ===== */
 
 #cabecalho {
     background-color: var(--azul);
     padding: 10px 10px;
 }
 
-#menu-cabecalho ul {
+#menu-cabecalho ul{
     margin: 10px 0 0 0;
     display: flex;
     flex-wrap: wrap;
@@ -58,30 +86,62 @@ body {
     text-decoration: none;
 }
 
-.link-nav:hover {
+.link-nav:hover{
     color: var(--dourado);
     text-decoration: underline;
 }
 
-/* css do rodape */
+/* Link da página atual (exigência do enunciado, seção 7).
+   .link-nav.ativo SEM espaço = o MESMO elemento com as DUAS classes. */
 
-#rodape {
-    background-color: var(--azul);
-    color: var(--fundo);
-    text-align: center;
-    padding: 20px 15px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
-
-#rodape strong {
+.link-nav.ativo {
     color: var(--dourado);
 }
 
-.link-rodape {
-    color: var(--azul3);
-    text-decoration: none;
-    font-weight: 600;
+
+/* ===== 5. FOCO ACESSÍVEL =====
+   Quando a pessoa navega pela tecla Tab, aparece um contorno dourado no link.
+   :focus-visible mostra o contorno para quem usa o teclado, mas não no clique do mouse.
+   O enunciado proíbe outline: none sem substituto. Nós não removemos, só personalizamos. */
+
+a:focus-visible {
+    outline: 2px solid var(--dourado);
+    outline-offset: 3px; /* afasta o contorno 3px do texto */
 }
+
+
+/* ===== 6. CONTEÚDO ===== */
+
+/* "main h1" COM espaço = seletor de descendente: o h1 que está DENTRO do main.
+   Garante que a regra só afete o título da página. */
+main h1 {
+    color: var(--azul);
+    padding: 2rem 2rem 0; /* cima 2rem, laterais 2rem, baixo 0 */
+}
+
+/* Classe obrigatória das sections (enunciado: padding 3rem 2rem + borda embaixo). */
+.secao {
+    padding: 3rem 2rem;
+    border-bottom: 1px solid var(--linha);
+}
+
+
+/* ===== 7. RODAPÉ (modelo padronizado pela turma) ===== */
+
+#rodape {
+  background-color: var(--azul);
+  color: var(--fundo);
+  text-align: center;
+  padding: 20px 15px;
+}
+
+#rodape strong {
+  color: var(--dourado);
+}
+
+.link-rodape {
+  color: var(--azul3);
+  text-decoration: none;
+  font-weight: 600;
+}
+
