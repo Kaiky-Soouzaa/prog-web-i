@@ -1,7 +1,3 @@
-/* COMMIT 06 — 17:05 — Kaiky Eduardo
-   Arquivo: CSS | Responsável: Kaiky Eduardo
-   Etapa: Base visual e variáveis do projeto
-*/
 /* =====================================================================
    style.css COMENTADO PARA ESTUDO — Grupo 5, página tecnologias.html
    Ordem do arquivo (exigida pelo enunciado):
@@ -143,5 +139,56 @@ main h1 {
   color: var(--azul3);
   text-decoration: none;
   font-weight: 600;
+}
+
+
+/* ===== 8. TÍTULOS DAS SEÇÕES ===== */
+
+.secao h2 {
+    color: var(--azul);
+    margin-bottom: 1rem; /* espaço entre o título e o conteúdo */
+}
+
+
+/* ===== 9. CARDS DE TECNOLOGIA =====
+   BOX MODEL obrigatório do Grupo 5 (não mudar esses números):
+   padding 1.5rem, margin-bottom 1.5rem, border-radius 6px.
+   padding = espaço de DENTRO (entre o conteúdo e a borda).
+   margin  = espaço de FORA (entre o card e o próximo). */
+
+.card-tech {
+    background: var(--branco);
+    border: 1px solid var(--linha);       /* borda fina em volta */
+    border-top: 4px solid var(--azul2);   /* borda de cima mais grossa (sobrescreve só o topo) */
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;                   /* cantos arredondados */
+}
+
+.card-tech h3 {
+    color: var(--azul);
+    margin-bottom: 0.5rem;
+}
+
+
+/* ===== 10. LISTA DE DEFINIÇÕES DENTRO DOS CARDS ===== */
+
+/* Obrigatório: dl com margin-top dentro do card. */
+.card-tech dl {
+    margin-top: 1rem;
+}
+
+/* dt = o termo: negrito e azul (exigência do enunciado). */
+.card-tech dt {
+    font-weight: bold;
+    color: var(--azul);
+}
+
+/* dd = a explicação: cinza e com recuo (exigência do enunciado). */
+.card-tech dd {
+    color: var(--cinza);
+    margin-left: 1.5rem;
+    /* o reset zerou o recuo padrão do dd; aqui ele volta */
+    margin-bottom: 0.5rem;
 }
 
