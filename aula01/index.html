@@ -1,25 +1,73 @@
 <!DOCTYPE html>
+<!-- DOCTYPE: avisa ao navegador que este arquivo é HTML5. Tem que ser a PRIMEIRA linha:
+     qualquer coisa antes dele, até um comentário, pode fazer o navegador entrar em "modo de compatibilidade". -->
+
+<!-- lang="pt-BR": diz o idioma da página. Ajuda leitores de tela e o Google. -->
 <html lang="pt-BR">
+
+<!-- HEAD: informações sobre a página. Nada daqui aparece no conteúdo da tela. -->
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Kaiky — Programação Web I</title>
+    <!-- Faz os acentos (á, ç, ã) aparecerem certos. -->
+    <meta charset="UTF-8">
+
+    <!-- Faz a página se ajustar à largura da tela do celular. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Texto que aparece na aba do navegador. -->
+    <title>Tecnologias | Portal BSI</title>
+
+    <!-- preconnect: abre a conexão com o Google Fonts antes, para a fonte carregar mais rápido. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Carrega a fonte Inter (pesos 400, 600 e 700). Exigência do enunciado. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Liga o nosso CSS externo. O enunciado proíbe CSS dentro do HTML. -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
- <h1>Kaiky Eduardo de Souza Santos</h1>
- <p>Estudante do 4º período de Sistemas de Informação</p>
- <hr>
- <h2>Por que Sistemas de Informação</h2>
- <p>Fiz o curso técnico em informática no ensino médio e gostei</p>
- <h2>O que eu já conheço</h2>
- <ul>
- <li>html</li>
- <li>css</li>
- <li>js</li>
- </ul>
- <h2>Um site que eu gostaria de construir</h2>
- <p>Um site que compara preços entre diferentes supermercados da região</p>
- <hr>
- <p><a href="https://github.com/Kaiky-Soouzaa">Meu perfil no GitHub</a></p>
+
+    <!-- ===================== CABEÇALHO =====================
+         Modelo padronizado pela turma (feito pelo grupo da Home).
+         O menu tem que ser idêntico em todas as páginas. -->
+    <header id="cabecalho">
+        <nav id="menu-cabecalho">
+            <h1 id="nome-cabecalho">Portal da Turma</h1>
+            <ul>    
+                <li><a href="index.html" class="link-nav">Home</a></li>
+                <li><a href="turma.html" class="link-nav">Turma</a></li>
+                <li><a href="projetos.html" class="link-nav">Projeto</a></li>
+                <li><a href="campus.html" class="link-nav">Campus</a></li>
+                <li><a href="tecnologias.html" class="link-nav">Tecnologia</a></li>
+                <li><a href="contato.html" class="link-nav">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===================== CONTEÚDO PRINCIPAL =====================
+         main: o conteúdo principal da página. Só existe um por página. -->
+    <main>
+        <!-- Título desta página. -->
+        <h1>Tecnologias</h1>
+    </main>
+
+    <!-- ===================== RODAPÉ =====================
+         Modelo padronizado pela turma. A linha do Grupo 5 foi acrescentada
+         porque o enunciado pede os créditos do grupo no rodapé. -->
+    <footer id="rodape">
+      <p>Portal da Turma - BSI 4º período IF Goiano - Campus Ceres</p>
+      <p>
+        Desenvolvido pelo
+        <strong>
+          4° Período de 2026 do curso de Bacharelado em Sistemas de
+          Informação</strong
+        >
+        - Programação Web I - 2026/2
+      </p>
+      <p>Página Tecnologias: Grupo 5 (José Antonio, Yuri Eduardo, Mateus Martins, Caique Kubo, Kaiky Eduardo)</p>
+      <a href="index.html" class="link-rodape">Voltar à Home</a>
+    </footer>
+
 </body>
+
 </html>
